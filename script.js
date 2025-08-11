@@ -8,6 +8,7 @@ function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({behavior: 'smooth'});
 }
 
+// Ambil semua gambar slider & produk
 const galleryImages = Array.from(document.querySelectorAll('.swiper-slide img, .produk-grid img'));
 let fullscreenSwiper;
 
