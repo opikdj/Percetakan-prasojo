@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percetakan Prasojo</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="https://via.placeholder.com/120x120?text=Logo" alt="Logo">
+    <h1>Percetakan Prasojo</h1>
+    <nav>
+        <button onclick="scrollToSection('home')">Home</button>
+        <button onclick="scrollToSection('produk')">Produk</button>
+        <button onclick="scrollToSection('tentang')">Tentang</button>
+    </nav>
+</header>
+
+<section id="home">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://via.placeholder.com/900x350?text=Slide+1"></div>
+            <div class="swiper-slide"><img src="https://via.placeholder.com/900x350?text=Slide+2"></div>
+            <div class="swiper-slide"><img src="https://via.placeholder.com/900x350?text=Slide+3"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+<div style="padding: 50px;"></div>
+
+<section id="produk">
+    <h2 style="text-align:center;">Produk Kami</h2>
+    <div class="produk-grid">
+        <img src="https://via.placeholder.com/300x200?text=Produk+1">
+        <img src="https://via.placeholder.com/300x200?text=Produk+2">
+        <img src="https://via.placeholder.com/300x200?text=Produk+3">
+        <img src="https://via.placeholder.com/300x200?text=Produk+4">
+        <img src="https://via.placeholder.com/300x200?text=Produk+5">
+    </div>
+</section>
+
+<section id="video">
+    <h2 style="text-align:center;">Video Produk</h2>
+    <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section id="peta">
+    <h2 style="text-align:center;">Lokasi Kami</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." allowfullscreen></iframe>
+</section>
+
+<section id="tentang" style="padding:20px; text-align:center;">
+    <h2>Tentang Kami</h2>
+    <p>Kami adalah percetakan profesional yang siap membantu kebutuhan cetak Anda.</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Percetakan Prasojo</p>
+</footer>
+
+<!-- Fullscreen Slider -->
+<div id="fullscreen">
+    <div class="swiper fullscreenSwiper">
+        <div class="swiper-wrapper" id="fullscreenWrapper"></div>
+        <div class="swiper-button-next" style="color:white;"></div>
+        <div class="swiper-button-prev" style="color:white;"></div>
+    </div>
+    <button class="back-btn" onclick="backToProduk()">Kembali ke Produk</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

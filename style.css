@@ -1,0 +1,116 @@
+:root {
+    --accent: #d4af37;
+    --light: #ffffff;
+    --dark: #000000;
+}
+body {
+    background: var(--light);
+    color: var(--dark);
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+header {
+    background: url('https://via.placeholder.com/1200x400?text=Banner+Percetakan') center/cover no-repeat;
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--light);
+}
+header img {
+    max-width: 120px;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+header h1 {
+    margin-top: 15px;
+    font-size: 2.5rem;
+}
+nav {
+    margin-top: 20px;
+}
+nav button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+.swiper {
+    width: 100%;
+    max-width: 900px;
+    height: 350px;
+    margin: auto;
+}
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 15px;
+    padding: 20px;
+}
+.produk-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#fullscreen {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#fullscreen .swiper {
+    width: 100%;
+    height: calc(100% - 60px);
+}
+#fullscreen img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+#fullscreen .back-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+video {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+}
+iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+footer {
+    background: var(--light);
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}
