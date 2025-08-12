@@ -1,80 +1,105 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Percetakan Prasojo</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Percetakan Prasojo - Produsen Piala Murah</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
 <header>
-    <img src="logo.png" alt="Logo">
-    <h1>Percetakan Prasojo</h1>
-    <nav>
-        <button onclick="scrollToSection('home')">Home</button>
-        <button onclick="scrollToSection('produk')">Produk</button>
-        <button onclick="scrollToSection('tentang')">Tentang</button>
-    </nav>
+  <div class="logo-container">
+    <a href="#beranda">
+      <img src="logopialaprasojo.png" alt="Logo" />
+    </a>
+  </div>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav class="nav-links">
+    <a href="#beranda" class="nav-link">Beranda</a>
+    <a href="#produk" class="nav-link">Produk</a>
+    <a href="#percetakan" class="nav-link">Percetakan</a>
+    <a href="#hubungi" class="nav-link">Hubungi Kami</a>
+  </nav>
 </header>
 
-<section id="home">
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="images (2).png"></div>
-            <div class="swiper-slide"><img src="images (13).jpeg"></div>
-            <div class="swiper-slide"><img src="TR257-TROPHY-BEST-IN-SHOW-BONSAI-1ST-REGIONAL-WORLD-BONSAI-CONVENTION-AWARD.webp"></div>
-        </div>
-        <div class="swiper-pagination"></div>
+<section id="beranda">
+  <div class="slideshow-container">
+    <div class="slides"><img src="slide-banner-piala-1.jpg" alt="Piala 1" /></div>
+    <div class="slides"><img src="slide-banner-piala-2.jpg" alt="Piala 2" /></div>
+  </div>
+</section>
+
+<div class="text-center">
+  <h2>Percetakan Prasojo</h2>
+  <h3>Kami adalah Percetakan Terpercaya Yang Melayani Pembuatan :</h3>
+  <p>
+    Trophy - Medali - Mug Custom - Tumbler - Undangan - Stempel - Banner - Dokumen - Raport K13 - Bendera - Stiker - Kalender - Amplop - Poster - Yasin - Nota - Kartu Nama - Kop Surat - Flyer - Brosur - Buku - ID Card - Name Tag.
+    <div class="text-center">
+      <i>Semua produk dikerjakan dengan bahan pilihan, mesin modern, dan harga yang bersahabat untuk kebutuhan personal, bisnis, dan acara Anda.</i>
     </div>
-</section>
-
-<div style="padding: 50px;"></div>
-
-<section id="produk">
-    <h2 style="text-align:center;">Produk Kami</h2>
-    <div class="produk-grid">
-        <img src="images (14).jpeg">
-        <img src="images (7).jpeg">
-        <img src="images (5).jpeg">
-        <img src="TR257-TROPHY-BEST-IN-SHOW-BONSAI-1ST-REGIONAL-WORLD-BONSAI-CONVENTION-AWARD.webp">
-        <img src="images (3).jpeg">
-    </div>
-</section>
-
-<section id="video">
-    <h2 style="text-align:center;">Video Produk</h2>
-    <video controls>
-        <source src="video.mp4" type="video/mp4">
-    </video>
-</section>
-
-<section id="peta">
-    <h2 style="text-align:center;">Lokasi Kami</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7904.189459998336!2d110.3311611!3d-7.8851573!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7aff5600293885%3A0x8df26bc8c05f6931!2sJl.%20Jend.%20Sudirman%20No.78%2C%20Nyangkringan%2C%20Bantul%2C%20Kec.%20Bantul%2C%20Kabupaten%20Bantul%2C%20Daerah%20Istimewa%20Yogyakarta%2055711!5e0!3m2!1sen!2sid!4v1754884077773!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</section>
-
-<section id="tentang" style="padding:20px; text-align:center;">
-    <h2>Tentang Kami</h2>
-    <p>Kami adalah percetakan profesional yang siap membantu kebutuhan cetak Anda.</p>
-</section>
-
-<footer>
-    <p>&copy; 2025 Percetakan Prasojo</p>
-</footer>
-
-<!-- Fullscreen Slider -->
-<div id="fullscreen">
-    <div class="swiper fullscreenSwiper">
-        <div class="swiper-wrapper" id="fullscreenWrapper"></div>
-        <div class="swiper-button-next" style="color:white;"></div>
-        <div class="swiper-button-prev" style="color:white;"></div>
-    </div>
-    <button class="back-btn" onclick="backToProduk()">Kembali ke Produk</button>
+  </p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<div class="text-center">
+  <h2>Produk Kami</h2>
+</div>
+<section id="produk">
+  <div class="product-grid">
+    <!-- Contoh gambar produk -->
+    <img src="P-001.png" alt="Model piala 1" />
+    <img src="P-002.png" alt="Model piala 2" />
+    <!-- ... (lanjutkan semua gambar seperti di kode asli) ... -->
+  </div>
+</section>
+
+<div class="text-center">
+  <h2>Percetakan</h2>
+</div>
+<section id="percetakan">
+  <div class="product-grid">
+    <img src="P-039.png" alt="Produk Percetakan 1" />
+    <img src="P-040.png" alt="Produk Percetakan 2" />
+    <!-- ... (lanjutkan semua gambar seperti di kode asli) ... -->
+  </div>
+</section>
+
+<div class="text-center">
+  <h2>Siap Kirim ke Seluruh Indonesia</h2>
+  <p><i>Pengiriman cepat dan aman ke seluruh wilayah.</i></p>
+</div>
+
+<section id="peta">
+  <h2 style="text-align:center;">Lokasi Kami</h2>
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!..." width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section id="hubungi" class="text-center" style="padding-bottom:40px;">
+  <a class="cta-btn" href="https://wa.me/+6287839399400" target="_blank">Tekan Untuk Hubungi Kami di WhatsApp</a>
+  <div class="text-center">
+    <h3>Jl. Jend. Sudirman No.96 RT.03 Nyangkringan Bantul, Bantul, Bantul, Yogyakarta</h3>
+  </div>
+</section>
+
+<footer>&copy; 2025 Percetakan Prasojo. All rights reserved.</footer>
+
+<a href="https://wa.me/62878-3939-9400" target="_blank" class="whatsapp-float" aria-label="Hubungi Kami via WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" tabindex="0" aria-modal="true" role="dialog" aria-label="Gambar Produk">
+  <span class="close-btn" onclick="closeLightbox()" role="button" aria-label="Tutup">&times;</span>
+  <span class="lightbox-prev" onclick="changeLightbox(-1)" role="button" aria-label="Gambar Sebelumnya">&#10094;</span>
+  <img id="lightbox-img" src="" alt="Gambar Produk" />
+  <span class="lightbox-next" onclick="changeLightbox(1)" role="button" aria-label="Gambar Berikutnya">&#10095;</span>
+</div>
+
 <script src="script.js"></script>
 </body>
-    </html>
+</html>
