@@ -34,8 +34,25 @@ const productImages = document.querySelectorAll(".product-grid img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 let currentImgIndex = 0;
+let startX = 0, endX = 0;
+let clickStartTime = 0;
 
+// Event untuk klik tidak sensitif + swipe
 productImages.forEach((img, index) => {
+  img.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+    clickStartTime = Date.now();
+  });
+
+  img.addEventListener("touchend", e => {
+    let touchTime = Date.now() - clickStartTime;
+    if (touchTime < 200) { // klik cepat
+      currentImgIndex = index;
+      showLightbox();
+    }
+  });
+
+  // Klik biasa di desktop
   img.addEventListener("click", () => {
     currentImgIndex = index;
     showLightbox();
@@ -58,12 +75,12 @@ function changeLightbox(n) {
   showLightbox();
 }
 
+// Tutup lightbox dengan klik di luar gambar
 lightbox.addEventListener("click", e => {
   if (e.target === lightbox) closeLightbox();
 });
 
 // Swipe untuk lightbox
-let startX = 0, endX = 0;
 lightboxImg.addEventListener("touchstart", e => startX = e.touches[0].clientX);
 lightboxImg.addEventListener("touchmove", e => endX = e.touches[0].clientX);
 lightboxImg.addEventListener("touchend", () => {
