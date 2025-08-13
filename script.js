@@ -35,28 +35,7 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 let currentImgIndex = 0;
 
-let startX = 0, endX = 0, startY = 0, endY = 0;
-
 productImages.forEach((img, index) => {
-  img.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-  });
-
-  img.addEventListener("touchend", e => {
-    endX = e.changedTouches[0].clientX;
-    endY = e.changedTouches[0].clientY;
-    let diffX = endX - startX;
-    let diffY = endY - startY;
-
-    // Jika gerakan kecil, dianggap klik
-    if (Math.abs(diffX) < 10 && Math.abs(diffY) < 10) {
-      currentImgIndex = index;
-      showLightbox();
-    }
-  });
-
-  // Klik mouse biasa
   img.addEventListener("click", () => {
     currentImgIndex = index;
     showLightbox();
@@ -84,6 +63,7 @@ lightbox.addEventListener("click", e => {
 });
 
 // Swipe untuk lightbox
+let startX = 0, endX = 0;
 lightboxImg.addEventListener("touchstart", e => startX = e.touches[0].clientX);
 lightboxImg.addEventListener("touchmove", e => endX = e.touches[0].clientX);
 lightboxImg.addEventListener("touchend", () => {
