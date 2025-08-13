@@ -62,13 +62,23 @@ lightbox.addEventListener("click", e => {
   if (e.target === lightbox) closeLightbox();
 });
 
-// Swipe untuk lightbox
+// Swipe untuk lightbox (lebih tidak sensitif)
 let startX = 0, endX = 0;
-lightboxImg.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-lightboxImg.addEventListener("touchmove", e => endX = e.touches[0].clientX);
+const swipeThreshold = 80; // minimal jarak geser agar gambar berganti
+
+lightboxImg.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+  endX = startX;
+});
+
+lightboxImg.addEventListener("touchmove", e => {
+  endX = e.touches[0].clientX;
+});
+
 lightboxImg.addEventListener("touchend", () => {
-  if (Math.abs(endX - startX) > 50) {
-    if (endX > startX) changeLightbox(-1);
+  let swipeDistance = endX - startX;
+  if (Math.abs(swipeDistance) > swipeThreshold) {
+    if (swipeDistance > 0) changeLightbox(-1);
     else changeLightbox(1);
   }
   startX = endX = 0;
