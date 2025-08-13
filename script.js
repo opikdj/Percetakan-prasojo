@@ -34,25 +34,29 @@ const productImages = document.querySelectorAll(".product-grid img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 let currentImgIndex = 0;
-let startX = 0, endX = 0;
-let clickStartTime = 0;
 
-// Event untuk klik tidak sensitif + swipe
+let startX = 0, endX = 0, startY = 0, endY = 0;
+
 productImages.forEach((img, index) => {
   img.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
-    clickStartTime = Date.now();
+    startY = e.touches[0].clientY;
   });
 
   img.addEventListener("touchend", e => {
-    let touchTime = Date.now() - clickStartTime;
-    if (touchTime < 200) { // klik cepat
+    endX = e.changedTouches[0].clientX;
+    endY = e.changedTouches[0].clientY;
+    let diffX = endX - startX;
+    let diffY = endY - startY;
+
+    // Jika gerakan kecil, dianggap klik
+    if (Math.abs(diffX) < 10 && Math.abs(diffY) < 10) {
       currentImgIndex = index;
       showLightbox();
     }
   });
 
-  // Klik biasa di desktop
+  // Klik mouse biasa
   img.addEventListener("click", () => {
     currentImgIndex = index;
     showLightbox();
@@ -75,7 +79,6 @@ function changeLightbox(n) {
   showLightbox();
 }
 
-// Tutup lightbox dengan klik di luar gambar
 lightbox.addEventListener("click", e => {
   if (e.target === lightbox) closeLightbox();
 });
