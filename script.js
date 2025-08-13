@@ -64,7 +64,7 @@ lightbox.addEventListener("click", e => {
 
 // Swipe untuk lightbox (lebih tidak sensitif)
 let startX = 0, endX = 0;
-const swipeThreshold = 80; // minimal jarak geser agar gambar berganti
+const swipeThreshold = 100; // minimal jarak geser agar gambar berganti
 
 lightboxImg.addEventListener("touchstart", e => {
   startX = e.touches[0].clientX;
